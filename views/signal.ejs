@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Packages - Cryptex</title>
+    <title>Signal - Cryptex</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" />
@@ -32,7 +32,7 @@
     <!-- Main style file -->
     <link
       rel="stylesheet"
-      href="../public/styles/dashboard.css"
+      href="../styles/dashboard.css"
       type="text/css"
     />
   </head>
@@ -47,7 +47,7 @@
     <!-- menu -->
     <div class="menu">
       <div class="menu-header">
-        <a href="#" class="menu-header-logo">
+        <a href="/dashboard" class="menu-header-logo">
           <img src="../images/logo.svg" alt="logo" />
           <span>Cryptex</span>
         </a>
@@ -76,7 +76,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a
-              href="./login.html"
+              href="/login"
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -86,7 +86,7 @@
         <ul>
           <li class="menu-divider">Dashboard</li>
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <span class="nav-link-icon">
                 <i class="ri-dashboard-line"></i>
               </span>
@@ -94,7 +94,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/markets">
               <span class="nav-link-icon">
                 <i class="bi bi-bar-chart"></i>
               </span>
@@ -110,18 +110,18 @@
             </a>
             <ul>
               <li>
-                <a href="./deposit.html">Deposit</a>
+                <a href="/deposit">Deposit</a>
               </li>
               <li>
-                <a href="./transfer.html">Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a href="./withdraw.html">Withdraw</a>
+                <a href="/withdraw">Withdraw</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="./history.html">
+            <a href="/history">
               <span class="nav-link-icon">
                 <i class="ri-history-line"></i>
               </span>
@@ -129,7 +129,7 @@
             </a>
           </li>
           <li>
-            <a class="active" href="./packages.html">
+            <a href="/packages">
               <span class="nav-link-icon">
                 <i class="ri-box-3-line"></i>
               </span>
@@ -138,7 +138,7 @@
             </a>
           </li>
           <li>
-            <a href="./signal.html">
+            <a class="active" href="/signal">
               <span class="nav-link-icon">
                 <i class="ri-signal-tower-fill"></i>
               </span>
@@ -146,7 +146,7 @@
             </a>
           </li>
           <li>
-            <a href="./aml-kyc.html">
+            <a href="/aml-kyc">
               <span class="nav-link-icon">
                 <i class="ri-pass-valid-line"></i>
               </span>
@@ -155,7 +155,7 @@
           </li>
           <li class="menu-divider">Pages</li>
           <li>
-            <a href="./settings.html">
+            <a href="/settings">
               <span class="nav-link-icon">
                 <i class="bi bi-gear"></i>
               </span>
@@ -182,7 +182,7 @@
           <img width="100" src="../images/logo.svg" alt="logo" />
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Packages</div>
+        <div class="page-title">Signal</div>
         <form class="search-form">
           <div class="input-group">
             <button
@@ -233,7 +233,7 @@
             <div class="col-md-6 m-auto">
               <p class="lead mb-0">
                 Choose one of the plans that suits you. You will get a better
-                service with the upgraded package.
+                service with the upgraded signal plan.
               </p>
             </div>
           </div>
@@ -244,42 +244,46 @@
             <div class="card">
               <div class="py-4">
                 <div
-                  class="d-flex align-items-center justify-content-center mb-1"
+                  class="d-flex align-items-center justify-content-center mb-4"
                 >
-                  <span class="display-7">Silver</span>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-center mb-1"
-                >
-                  <span class="display-9">$500 - $4999</span>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-center mb-1"
-                >
-                  <span class="text-muted">0.01139389 BTC</span>
+                  <span class="display-6 me-3">Free</span>
+                  <span class="text-muted">1 month free</span>
                 </div>
                 <div class="mb-4">
                   <ul class="list-group list-group-flush">
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Weekly Intrest: 5%
+                      Direct Trading Signals from the Brokerage.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Investment Sum: $500
+                      24/7 access to trading.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
-                      <i class="bi bi-check2 me-2"></i>
-                      Trading/Withdrawl Commission: 10%
+                    <li class="list-group-item">
+                      <i class="bi bi-x text-danger me-2"></i>
+                      <del class="text-danger"> Exclusive Account manager features. </del>
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
+                      <i class="bi bi-x text-danger me-2"></i>
+                      <del class="text-danger"> Daily Market Reviews and Financial research. </del>
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-x text-danger me-2"></i>
+                      <del class="text-danger"> Priority Futures Market trading. </del>
+                    </li>
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Referral Bonus: 5%
+                      Increased asset leverage: up-to 70x.
                     </li>
                   </ul>
                 </div>
                 <div class="text-center">
-                  <a href="#" class="btn btn-primary" style="background-color: #3874ff; border:none;">Choose Plan</a>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    style="background-color: #3874ff; border:none;"
+                    >Start Trial</a
+                  >
                 </div>
               </div>
             </div>
@@ -288,42 +292,41 @@
             <div class="card card-selected">
               <div class="py-4">
                 <div
-                  class="d-flex align-items-center justify-content-center mb-1"
+                  class="d-flex align-items-center justify-content-center mb-4"
                 >
-                  <span class="display-7">Gold</span>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-center mb-1"
-                >
-                  <span class="display-9">$5000 - $14999</span>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-center mb-1"
-                >
-                  <span class="text-muted">0.11393891 BTC</span>
+                  <span class="display-6 me-3" data-price1-text="">$1,500</span>
+                  <span class="text-muted" data-price1-label="">2 Months</span>
                 </div>
                 <div class="mb-4">
                   <ul class="list-group list-group-flush">
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Weekly Intrest: 10%
+                      Direct Trading Signals from the Brokerage.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Investment Sum: $5000
+                      24/7 access to trading.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Trading/Withdrawl Commission: 10%
+                      Exclusive Account manager features.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Referral Bonus: 5%
+                      Daily Market Reviews and Financial research.
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-x text-danger me-2"></i>
+                      <del class="text-danger"> Priority Futures Market trading. </del>
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-check2 me-2"></i>
+                      Increased asset leverage: up-to 70x.
                     </li>
                   </ul>
                 </div>
                 <div class="text-center">
-                  <a href="#" class="btn btn-primary">Choose Plan</a>
+                  <a href="#" class="btn btn-primary">Get Started</a>
                 </div>
               </div>
             </div>
@@ -332,42 +335,47 @@
             <div class="card">
               <div class="py-4">
                 <div
-                  class="d-flex align-items-center justify-content-center mb-1"
+                  class="d-flex align-items-center justify-content-center mb-4"
                 >
-                  <span class="display-7">Diamond</span>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-center mb-1"
-                >
-                  <span class="display-9">$1500 - $49999</span>
-                </div>
-                <div
-                  class="d-flex align-items-center justify-content-center mb-1"
-                >
-                  <span class="text-muted">0.34181674 BTC</span>
+                  <del class="text-danger me-3">$3,500</del>
+                  <span class="display-6 me-3" data-price2-text="">$2,500</span>
+                  <span class="text-muted" data-price2-label="">Monthly</span>
                 </div>
                 <div class="mb-4">
                   <ul class="list-group list-group-flush">
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Weekly Intrest: 10%
+                      Direct Trading Signals from the Brokerage.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Investment Sum: $15000
+                      24/7 access to trading.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Trading/Withdrawl Commission: 15%
+                      Exclusive Account manager features.
                     </li>
-                    <li class="d-flex list-group-item justify-content-center">
+                    <li class="list-group-item">
                       <i class="bi bi-check2 me-2"></i>
-                      Referral Bonus: 5%
+                      Daily Market Reviews and Financial research.
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-check2 me-2"></i>
+                      Priority Futures Market trading.
+                    </li>
+                    <li class="list-group-item">
+                      <i class="bi bi-check2 me-2"></i>
+                      Increased asset leverage: up-to 70x.
                     </li>
                   </ul>
                 </div>
                 <div class="text-center">
-                  <a href="#" class="btn btn-primary" style="background-color: #3874ff; border:none;">Choose Plan</a>
+                  <a
+                    href="#"
+                    class="btn btn-primary"
+                    style="background-color: #3874ff; border:none;"
+                    >Get Plan</a
+                  >
                 </div>
               </div>
             </div>
@@ -409,6 +417,6 @@
     <script src="../js/examples/dashboard.js"></script>
 
     <!-- Main Javascript file -->
-    <script src="../public/scripts/dashboard.js"></script>
+    <script src="../scripts/dashboard.js"></script>
   </body>
 </html>

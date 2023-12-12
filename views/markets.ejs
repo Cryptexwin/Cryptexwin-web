@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Transfer - Cryptex</title>
+    <title>Markets - Cryptex</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" />
@@ -32,10 +32,9 @@
     <!-- Main style file -->
     <link
       rel="stylesheet"
-      href="../public/styles/dashboard.css"
+      href="../styles/dashboard.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="../public/styles/copy.css" />
   </head>
   <body>
     <!-- preloader -->
@@ -48,7 +47,7 @@
     <!-- menu -->
     <div class="menu">
       <div class="menu-header">
-        <a href="#" class="menu-header-logo">
+        <a href="/dashboard" class="menu-header-logo">
           <img src="../images/logo.svg" alt="logo" />
           <span>Cryptex</span>
         </a>
@@ -77,7 +76,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a
-              href="./login.html"
+              href="/login"
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -87,7 +86,7 @@
         <ul>
           <li class="menu-divider">Dashboard</li>
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <span class="nav-link-icon">
                 <i class="ri-dashboard-line"></i>
               </span>
@@ -95,7 +94,7 @@
             </a>
           </li>
           <li>
-            <a href="./markets.html">
+            <a class="active" href="/markets">
               <span class="nav-link-icon">
                 <i class="bi bi-bar-chart"></i>
               </span>
@@ -111,18 +110,18 @@
             </a>
             <ul>
               <li>
-                <a href="./deposit.html">Deposit</a>
+                <a href="/deposit">Deposit</a>
               </li>
               <li>
-                <a class="active" href="#">Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a href="./withdraw.html">Withdraw</a>
+                <a href="/withdraw">Withdraw</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="./history.html">
+            <a href="/history">
               <span class="nav-link-icon">
                 <i class="ri-history-line"></i>
               </span>
@@ -130,7 +129,7 @@
             </a>
           </li>
           <li>
-            <a href="./packages.html">
+            <a href="/packages">
               <span class="nav-link-icon">
                 <i class="ri-box-3-line"></i>
               </span>
@@ -139,7 +138,7 @@
             </a>
           </li>
           <li>
-            <a href="./signal.html">
+            <a href="/signal">
               <span class="nav-link-icon">
                 <i class="ri-signal-tower-fill"></i>
               </span>
@@ -147,7 +146,7 @@
             </a>
           </li>
           <li>
-            <a href="./aml-kyc.html">
+            <a href="/aml-kyc">
               <span class="nav-link-icon">
                 <i class="ri-pass-valid-line"></i>
               </span>
@@ -156,7 +155,7 @@
           </li>
           <li class="menu-divider">Pages</li>
           <li>
-            <a href="./settings.html">
+            <a href="/settings">
               <span class="nav-link-icon">
                 <i class="bi bi-gear"></i>
               </span>
@@ -183,7 +182,7 @@
           <img width="100" src="../images/logo.svg" alt="logo" />
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Dashboard</div>
+        <div class="page-title">Markets</div>
         <form class="search-form">
           <div class="input-group">
             <button
@@ -237,74 +236,134 @@
 
       <!-- content -->
       <div class="content">
-        <div class="row flex-column-reverse flex-md-row">
-          <div class="col-md-8">
-            <div class="card mb-4">
-              <div class="card-body">
-                <h6 class="card-title mb-4">Transfer</h6>
-                <div class="row">
-                  <div>
-                    <div class="mb-3">
-                      <label class="form-label">Select Assets</label>
-                      <div>
-                        <select name="Select Assets" class="form-control">
-                          <option value="">Choose Assets</option>
-                          <option value="btc">BTC</option>
-                          <option value="eth">ETH</option>
-                          <option value="usdt">USDT</option>
-                          <option value="usdc">USDC</option>
-                        </select>
-                      </div>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Amount</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        placeholder="enter amount"
-                      />
-                    </div>
-                  </div>
-                  <div>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                      style="background-color: #3874ff; border: none"
-                    >
-                      Make Payment
-                    </button>
-                  </div>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col-lg-3 col-md-12">
+            <div class="card">
+              <div class="d-flex mt-4">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
+                    async
+                  >
+                      {
+                      "symbol": "CRYPTOCAP:BTC",
+                      "width": "100%",
+                      "colorTheme": "light",
+                      "isTransparent": true,
+                      "locale": "en"
+                    }
+                  </script>
                 </div>
+                <!-- TradingView Widget END -->
               </div>
             </div>
-            <div
-              class="modal"
-              id="exampleModal"
-              tabindex="1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="card-title text-danger"><i class="ri-information-fill"></i> Warning</h4>
+          </div>
+          <div class="col-lg-3 col-md-12">
+            <div class="card">
+              <div class="d-flex mt-4">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
+                    async
+                  >
+                      {
+                      "symbol": "CRYPTOCAP:ETH",
+                      "width": "100%",
+                      "colorTheme": "light",
+                      "isTransparent": true,
+                      "locale": "en"
+                    }
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12">
+            <div class="card">
+              <div class="d-flex mt-4">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
+                    async
+                  >
+                      {
+                      "symbol": "CRYPTOCAP:BNB",
+                      "width": "100%",
+                      "colorTheme": "light",
+                      "isTransparent": true,
+                      "locale": "en"
+                    }
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-12">
+            <div class="card">
+              <div class="d-flex mt-4">
+                <!-- TradingView Widget BEGIN -->
+                <div class="tradingview-widget-container">
+                  <div class="tradingview-widget-container__widget"></div>
+                  <script
+                    type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
+                    async
+                  >
+                      {
+                      "symbol": "CRYPTOCAP:USDT",
+                      "width": "100%",
+                      "colorTheme": "light",
+                      "isTransparent": true,
+                      "locale": "en"
+                    }
+                  </script>
+                </div>
+                <!-- TradingView Widget END -->
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12 col-md-12">
+            <div class="card" style="height: 70vh">
+              <div class="card-body">
+                <div class="d-flex mb-3">
+                  <div class="display-7">
+                    <i class="bi bi-bar-chart"></i>
                   </div>
-                  <div class="modal-body">
-                    <h4 class="display-9">
-                      Your account type not compactible with transfering funds
-                    </h4>
+                </div>
+                <h4 class="mb-3">Markets</h4>
+                <div class="d-flex mb-3">
+                  <!-- TradingView Widget BEGIN -->
+                  <div class="tradingview-widget-container">
+                    <div class="tradingview-widget-container__widget"></div>
+                    <script
+                      type="text/javascript"
+                      src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
+                      async
+                    >
+                        {
+                        "width": "1500",
+                        "height": "510",
+                        "defaultColumn": "overview",
+                        "screener_type": "crypto_mkt",
+                        "displayCurrency": "USD",
+                        "colorTheme": "light",
+                        "locale": "en",
+                        "isTransparent": true
+                      }
+                    </script>
                   </div>
-                  <div class="modal-footer">
-                      <button
-                        type="button"
-                        class="btn btn-danger ms-3"
-                        data-bs-dismiss="modal"
-                      >
-                        Close
-                      </button>
-                  </div>
+                  <!-- TradingView Widget END -->
                 </div>
               </div>
             </div>
@@ -346,7 +405,6 @@
     <script src="../js/examples/dashboard.js"></script>
 
     <!-- Main Javascript file -->
-    <script src="../public/scripts/dashboard.js"></script>
-    <script src="../public/scripts/copy.js"></script>
+    <script src="../scripts/dashboard.js"></script>
   </body>
 </html>

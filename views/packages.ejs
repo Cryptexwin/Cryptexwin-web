@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Markets - Cryptex</title>
+    <title>Packages - Cryptex</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" />
@@ -32,7 +32,7 @@
     <!-- Main style file -->
     <link
       rel="stylesheet"
-      href="../public/styles/dashboard.css"
+      href="../styles/dashboard.css"
       type="text/css"
     />
   </head>
@@ -47,7 +47,7 @@
     <!-- menu -->
     <div class="menu">
       <div class="menu-header">
-        <a href="#" class="menu-header-logo">
+        <a href="/dashboard" class="menu-header-logo">
           <img src="../images/logo.svg" alt="logo" />
           <span>Cryptex</span>
         </a>
@@ -76,7 +76,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a
-              href="./login.html"
+              href="/login"
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -86,7 +86,7 @@
         <ul>
           <li class="menu-divider">Dashboard</li>
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <span class="nav-link-icon">
                 <i class="ri-dashboard-line"></i>
               </span>
@@ -94,7 +94,7 @@
             </a>
           </li>
           <li>
-            <a class="active" href="#">
+            <a href="/markets">
               <span class="nav-link-icon">
                 <i class="bi bi-bar-chart"></i>
               </span>
@@ -110,18 +110,18 @@
             </a>
             <ul>
               <li>
-                <a href="./deposit.html">Deposit</a>
+                <a href="/deposit">Deposit</a>
               </li>
               <li>
-                <a href="./transfer.html">Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a href="./withdraw.html">Withdraw</a>
+                <a href="/withdraw">Withdraw</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="./history.html">
+            <a href="/history">
               <span class="nav-link-icon">
                 <i class="ri-history-line"></i>
               </span>
@@ -129,7 +129,7 @@
             </a>
           </li>
           <li>
-            <a href="./packages.html">
+            <a class="active" href="/packages">
               <span class="nav-link-icon">
                 <i class="ri-box-3-line"></i>
               </span>
@@ -138,7 +138,7 @@
             </a>
           </li>
           <li>
-            <a href="./signal.html">
+            <a href="/signal">
               <span class="nav-link-icon">
                 <i class="ri-signal-tower-fill"></i>
               </span>
@@ -146,7 +146,7 @@
             </a>
           </li>
           <li>
-            <a href="./aml-kyc.html">
+            <a href="/aml-kyc">
               <span class="nav-link-icon">
                 <i class="ri-pass-valid-line"></i>
               </span>
@@ -155,7 +155,7 @@
           </li>
           <li class="menu-divider">Pages</li>
           <li>
-            <a href="./settings.html">
+            <a href="/settings">
               <span class="nav-link-icon">
                 <i class="bi bi-gear"></i>
               </span>
@@ -182,7 +182,7 @@
           <img width="100" src="../images/logo.svg" alt="logo" />
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Markets</div>
+        <div class="page-title">Packages</div>
         <form class="search-form">
           <div class="input-group">
             <button
@@ -206,18 +206,10 @@
         </form>
         <div class="header-bar ms-auto">
           <ul class="navbar-nav justify-content-end">
-            <li class="nav-item">
+            <li class="nav-item me-3">
               <a href="#" class="nav-link" data-sidebar-target="#notifications">
                 <i class="bi bi-bell icon-lg"></i>
               </a>
-            </li>
-            <li class="nav-item ms-3">
-              <button
-                class="btn btn-primary btn-icon"
-                style="background-color: #3874ff; border: none"
-              >
-                Verified
-              </button>
             </li>
           </ul>
         </div>
@@ -236,134 +228,146 @@
 
       <!-- content -->
       <div class="content">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          <div class="col-lg-3 col-md-12">
+        <div class="text-center my-5">
+          <div class="row mb-5">
+            <div class="col-md-6 m-auto">
+              <p class="lead mb-0">
+                Choose one of the plans that suits you. You will get a better
+                service with the upgraded package.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-4">
             <div class="card">
-              <div class="d-flex mt-4">
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                  <div class="tradingview-widget-container__widget"></div>
-                  <script
-                    type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
-                    async
-                  >
-                      {
-                      "symbol": "CRYPTOCAP:BTC",
-                      "width": "100%",
-                      "colorTheme": "light",
-                      "isTransparent": true,
-                      "locale": "en"
-                    }
-                  </script>
+              <div class="py-4">
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="display-7">Silver</span>
                 </div>
-                <!-- TradingView Widget END -->
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="display-9">$500 - $4999</span>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="text-muted">0.01139389 BTC</span>
+                </div>
+                <div class="mb-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Weekly Intrest: 5%
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Investment Sum: $500
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Trading/Withdrawl Commission: 10%
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Referral Bonus: 5%
+                    </li>
+                  </ul>
+                </div>
+                <div class="text-center">
+                  <a href="#" class="btn btn-primary" style="background-color: #3874ff; border:none;">Choose Plan</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-12">
-            <div class="card">
-              <div class="d-flex mt-4">
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                  <div class="tradingview-widget-container__widget"></div>
-                  <script
-                    type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
-                    async
-                  >
-                      {
-                      "symbol": "CRYPTOCAP:ETH",
-                      "width": "100%",
-                      "colorTheme": "light",
-                      "isTransparent": true,
-                      "locale": "en"
-                    }
-                  </script>
+          <div class="col-md-4">
+            <div class="card card-selected">
+              <div class="py-4">
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="display-7">Gold</span>
                 </div>
-                <!-- TradingView Widget END -->
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="display-9">$5000 - $14999</span>
+                </div>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="text-muted">0.11393891 BTC</span>
+                </div>
+                <div class="mb-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Weekly Intrest: 10%
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Investment Sum: $5000
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Trading/Withdrawl Commission: 10%
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Referral Bonus: 5%
+                    </li>
+                  </ul>
+                </div>
+                <div class="text-center">
+                  <a href="#" class="btn btn-primary">Choose Plan</a>
+                </div>
               </div>
             </div>
           </div>
-          <div class="col-lg-3 col-md-12">
+          <div class="col-md-4">
             <div class="card">
-              <div class="d-flex mt-4">
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                  <div class="tradingview-widget-container__widget"></div>
-                  <script
-                    type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
-                    async
-                  >
-                      {
-                      "symbol": "CRYPTOCAP:BNB",
-                      "width": "100%",
-                      "colorTheme": "light",
-                      "isTransparent": true,
-                      "locale": "en"
-                    }
-                  </script>
+              <div class="py-4">
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="display-7">Diamond</span>
                 </div>
-                <!-- TradingView Widget END -->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-12">
-            <div class="card">
-              <div class="d-flex mt-4">
-                <!-- TradingView Widget BEGIN -->
-                <div class="tradingview-widget-container">
-                  <div class="tradingview-widget-container__widget"></div>
-                  <script
-                    type="text/javascript"
-                    src="https://s3.tradingview.com/external-embedding/embed-widget-single-quote.js"
-                    async
-                  >
-                      {
-                      "symbol": "CRYPTOCAP:USDT",
-                      "width": "100%",
-                      "colorTheme": "light",
-                      "isTransparent": true,
-                      "locale": "en"
-                    }
-                  </script>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="display-9">$1500 - $49999</span>
                 </div>
-                <!-- TradingView Widget END -->
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-12 col-md-12">
-            <div class="card" style="height: 70vh">
-              <div class="card-body">
-                <div class="d-flex mb-3">
-                  <div class="display-7">
-                    <i class="bi bi-bar-chart"></i>
-                  </div>
+                <div
+                  class="d-flex align-items-center justify-content-center mb-1"
+                >
+                  <span class="text-muted">0.34181674 BTC</span>
                 </div>
-                <h4 class="mb-3">Markets</h4>
-                <div class="d-flex mb-3">
-                  <!-- TradingView Widget BEGIN -->
-                  <div class="tradingview-widget-container">
-                    <div class="tradingview-widget-container__widget"></div>
-                    <script
-                      type="text/javascript"
-                      src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js"
-                      async
-                    >
-                        {
-                        "width": "1500",
-                        "height": "510",
-                        "defaultColumn": "overview",
-                        "screener_type": "crypto_mkt",
-                        "displayCurrency": "USD",
-                        "colorTheme": "light",
-                        "locale": "en",
-                        "isTransparent": true
-                      }
-                    </script>
-                  </div>
-                  <!-- TradingView Widget END -->
+                <div class="mb-4">
+                  <ul class="list-group list-group-flush">
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Weekly Intrest: 10%
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Investment Sum: $15000
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Trading/Withdrawl Commission: 15%
+                    </li>
+                    <li class="d-flex list-group-item justify-content-center">
+                      <i class="bi bi-check2 me-2"></i>
+                      Referral Bonus: 5%
+                    </li>
+                  </ul>
+                </div>
+                <div class="text-center">
+                  <a href="#" class="btn btn-primary" style="background-color: #3874ff; border:none;">Choose Plan</a>
                 </div>
               </div>
             </div>
@@ -405,6 +409,6 @@
     <script src="../js/examples/dashboard.js"></script>
 
     <!-- Main Javascript file -->
-    <script src="../public/scripts/dashboard.js"></script>
+    <script src="../scripts/dashboard.js"></script>
   </body>
 </html>

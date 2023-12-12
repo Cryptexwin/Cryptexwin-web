@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Deposit - Cryptex</title>
+    <title>Withdraw - Cryptex</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" />
@@ -32,10 +32,10 @@
     <!-- Main style file -->
     <link
       rel="stylesheet"
-      href="../public/styles/dashboard.css"
+      href="../styles/dashboard.css"
       type="text/css"
     />
-    <link rel="stylesheet" href="../public/styles/copy.css" />
+    <link rel="stylesheet" href="../styles/copy.css" />
   </head>
   <body>
     <!-- preloader -->
@@ -48,7 +48,7 @@
     <!-- menu -->
     <div class="menu">
       <div class="menu-header">
-        <a href="#" class="menu-header-logo">
+        <a href="/dashboard" class="menu-header-logo">
           <img src="../images/logo.svg" alt="logo" />
           <span>Cryptex</span>
         </a>
@@ -77,7 +77,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a
-              href="./login.html"
+              href="/login"
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -87,7 +87,7 @@
         <ul>
           <li class="menu-divider">Dashboard</li>
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <span class="nav-link-icon">
                 <i class="ri-dashboard-line"></i>
               </span>
@@ -95,7 +95,7 @@
             </a>
           </li>
           <li>
-            <a href="./markets.html">
+            <a href="/markets">
               <span class="nav-link-icon">
                 <i class="bi bi-bar-chart"></i>
               </span>
@@ -111,18 +111,18 @@
             </a>
             <ul>
               <li>
-                <a class="active" href="#">Deposit</a>
+                <a href="/deposit">Deposit</a>
               </li>
               <li>
-                <a href="./transfer.html">Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a href="./withdraw.html">Withdraw</a>
+                <a class="active" href="/withdraw">Withdraw</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="./history.html">
+            <a href="/history">
               <span class="nav-link-icon">
                 <i class="ri-history-line"></i>
               </span>
@@ -130,7 +130,7 @@
             </a>
           </li>
           <li>
-            <a href="./packages.html">
+            <a href="/packages">
               <span class="nav-link-icon">
                 <i class="ri-box-3-line"></i>
               </span>
@@ -139,7 +139,7 @@
             </a>
           </li>
           <li>
-            <a href="./signal.html">
+            <a href="/signal">
               <span class="nav-link-icon">
                 <i class="ri-signal-tower-fill"></i>
               </span>
@@ -147,7 +147,7 @@
             </a>
           </li>
           <li>
-            <a href="./aml-kyc.html">
+            <a href="/aml-kyc">
               <span class="nav-link-icon">
                 <i class="ri-pass-valid-line"></i>
               </span>
@@ -156,7 +156,7 @@
           </li>
           <li class="menu-divider">Pages</li>
           <li>
-            <a href="./settings.html">
+            <a href="/settings">
               <span class="nav-link-icon">
                 <i class="bi bi-gear"></i>
               </span>
@@ -183,7 +183,7 @@
           <img width="100" src="../images/logo.svg" alt="logo" />
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Dashboard</div>
+        <div class="page-title">Withdraw</div>
         <form class="search-form">
           <div class="input-group">
             <button
@@ -241,20 +241,37 @@
           <div class="col-md-8">
             <div class="card mb-4">
               <div class="card-body">
-                <h6 class="card-title mb-4">Deposit</h6>
+                <h6 class="card-title mb-4">Transfer</h6>
                 <div class="row">
                   <div>
                     <div class="mb-3">
-                      <label class="form-label">Select Assets</label>
+                      <label class="form-label">Choose Balance Type</label>
                       <div>
-                        <select name="Select Assets" class="form-control" required>
-                          <option value="">Choose Assets</option>
-                          <option value="btc">BTC</option>
-                          <option value="eth">ETH</option>
-                          <option value="usdt">USDT</option>
-                          <option value="usdc">USDC</option>
+                        <select name="Select Balance Type" class="form-control">
+                          <option value="">Choose Balance Type</option>
+                          <option value="cb">Capital Balance</option>
+                          <option value="pb">Profit Balance</option>
+                          <option value="bb">Bonus Balance</option>
                         </select>
                       </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Select Assets</label>
+                      <div>
+                        <select name="Select Assets" class="form-control">
+                          <option value=""></option>
+                          <option value="btc">Bitcoin</option>
+                          <option value="eth">Ethereum</option>
+                          <option value="usdt">USDT</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Address</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                      />
                     </div>
                     <div class="mb-3">
                       <label class="form-label">Amount</label>
@@ -262,14 +279,8 @@
                         type="email"
                         class="form-control"
                         placeholder="enter amount"
-                        required
                       />
                     </div>
-                    <p class="text-muted">
-                      <i class="ri-information-fill text-success"></i>
-                      Deposits will appear in your account after payments are
-                      successfully made and confirmed by our team
-                    </p>
                   </div>
                   <div>
                     <button
@@ -279,7 +290,7 @@
                       data-bs-target="#exampleModal"
                       style="background-color: #3874ff; border: none"
                     >
-                      Make Payment
+                      Proccess Withdrawal
                     </button>
                   </div>
                 </div>
@@ -295,60 +306,23 @@
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h4 class="card-title">Payment Confirmation</h4>
+                    <h4 class="card-title text-danger">
+                      <i class="ri-information-fill"></i> Warning
+                    </h4>
                   </div>
                   <div class="modal-body">
-                    <p>
-                      Your Order no. CXCA893GrSw5K has been placed successfully.
-                    </p>
-                    <p>
-                      Please send 1000 USDT ($1000) to the address below. The
-                      balance will appear in your account only after transaction
-                      gets confirmed by our team.
-                    </p>
                     <h4 class="display-9">
-                      Payment to the following USDT Wallet Address
+                      Your account type not compactible with withdrawing funds
                     </h4>
-                    <div
-                      class="align-items-center d-flex justify-content-left text-left"
-                    >
-                      <img src="../images/scan.jpg" width="200px" alt="scan" />
-                      <div>
-                        <label class="form-label">Amount</label>
-                        <input
-                          type="email"
-                          class="form-control"
-                          placeholder="enter amount"
-                          style="width: 500px;"
-                        />
-                      </div>
-                    </div>
                   </div>
-                  <div class="modal-footer justify-content-between">
-                    <div>
-                      <button type="button" class="btn btn-primary">
-                        Confirm
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-danger ms-3"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                    <div style="display: block">
-                      <p class="text-muted">
-                        <i class="ri-information-fill text-success"></i>
-                        Kindly ensure you select the appropriate networks for
-                        deposit.
-                      </p>
-                      <p class="text-danger">
-                        <i class="ri-information-fill"></i>
-                        Kindly ensure you send exact amount as added in your
-                        deposit
-                      </p>
-                    </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-danger ms-3"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
                   </div>
                 </div>
               </div>
@@ -391,7 +365,7 @@
     <script src="../js/examples/dashboard.js"></script>
 
     <!-- Main Javascript file -->
-    <script src="../public/scripts/dashboard.js"></script>
-    <script src="../public/scripts/copy.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+    <script src="../scripts/copy.js"></script>
   </body>
 </html>

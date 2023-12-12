@@ -1,109 +1,120 @@
-const path = require('path')
+const fs = require("fs");
+const path = require("path");
 
-const express = require('express')
+const express = require("express");
 
-const app = express()
+const app = express();
 
-app.use(express.static('public'))
+app.set("views", path.join(__dirname, "views"));
+app.set("view engine", "ejs");
 
-app.get('/', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'index.html')
-    res.sendFile(htmlFilePath)
-})
+app.use(express.static("public"));
+app.use(express.urlencoded({ extended: false }));
 
-app.get('/about', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'about.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/", function (req, res) {
+  res.render("index");
+});
 
-app.get('/aml-kyc', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'aml-kyc.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/about", function (req, res) {
+  res.render("about");
+});
 
-app.get('/contact-us', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'contact-us.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/aml-kyc", function (req, res) {
+  res.render("aml-kyc");
+});
 
-app.get('/dashboard', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'dashboard.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/contact-us", function (req, res) {
+  res.render("contact-us");
+});
 
-app.get('/deposit', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'deposit.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/dashboard", function (req, res) {
+  res.render("dashboard");
+});
 
-app.get('/education', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'education.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/deposit", function (req, res) {
+  res.render("deposit");
+});
 
-app.get('/faq', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'FAQ.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/education", function (req, res) {
+  res.render("education");
+});
 
-app.get('/help', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'help.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/faq", function (req, res) {
+  res.render("FAQ");
+});
 
-app.get('/history', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'history.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/help", function (req, res) {
+  res.render("help");
+});
 
-app.get('/login', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'login.html')
-    res.sendFile(htmlFilePath)
-})
+app.post("/help", function (req, res) {
+  const restaurant = req.body;
+  const filePath = path.join(__dirname, "data", "restaurants.json");
 
-app.get('/markets', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'markets.html')
-    res.sendFile(htmlFilePath)
-})
+  const fileData = fs.readFileSync(filePath);
+  const storedRestaurants = JSON.parse(fileData);
 
-app.get('/news', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'news.html')
-    res.sendFile(htmlFilePath)
-})
+  storedRestaurants.push(restaurant);
 
-app.get('/packages', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'packages.html')
-    res.sendFile(htmlFilePath)
-})
+  fs.writeFileSync(filePath, JSON.stringify(storedRestaurants));
 
-app.get('/settings', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'settings.html')
-    res.sendFile(htmlFilePath)
-})
+  res.redirect("/confirm");
+});
 
-app.get('/signal', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'signal.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/confirm", function (req, res) {
+  res.render("confirm");
+});
 
-app.get('/signup', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'signup.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/history", function (req, res) {
+  const filePath = path.join(__dirname, "data", "histories.json");
 
-app.get('/transfer', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'transfer.html')
-    res.sendFile(htmlFilePath)
-})
+  const fileData = fs.readFileSync(filePath);
+  const storedHistories = JSON.parse(fileData);
 
-app.get('/withdraw', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', 'withdraw.html')
-    res.sendFile(htmlFilePath)
-})
+  res.render("history", {
+    numberOfHistories: storedHistories.length,
+    histories: storedHistories
+  });
+});
 
-app.get('/404', function(req, res){
-    const htmlFilePath = path.join(__dirname, 'views', '404.html')
-    res.sendFile(htmlFilePath)
-})
+app.get("/login", function (req, res) {
+  res.render("login");
+});
 
-app.listen(3000)
+app.get("/markets", function (req, res) {
+  res.render("markets");
+});
+
+app.get("/news", function (req, res) {
+  res.render("news");
+});
+
+app.get("/packages", function (req, res) {
+  res.render("packages");
+});
+
+app.get("/settings", function (req, res) {
+  res.render("settings");
+});
+
+app.get("/signal", function (req, res) {
+  res.render("signal");
+});
+
+app.get("/signup", function (req, res) {
+  res.render("signup");
+});
+
+app.get("/transfer", function (req, res) {
+  res.render("transfer");
+});
+
+app.get("/withdraw", function (req, res) {
+  res.render("withdraw");
+});
+
+app.get("/404", function (req, res) {
+  res.render("404");
+});
+
+app.listen(3000);

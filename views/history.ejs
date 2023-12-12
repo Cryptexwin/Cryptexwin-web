@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>AML/KYC - Cryptex</title>
+    <title>History - Cryptex</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" />
@@ -30,12 +30,9 @@
     <link rel="stylesheet" href="../libs/slick/slick.css" type="text/css" />
 
     <!-- Main style file -->
-    <link
-      rel="stylesheet"
-      href="../public/styles/dashboard.css"
-      type="text/css"
-    />
+    <link rel="stylesheet" href="../styles/dashboard.css" type="text/css" />
   </head>
+
   <body>
     <!-- preloader -->
     <div class="preloader">
@@ -47,7 +44,7 @@
     <!-- menu -->
     <div class="menu">
       <div class="menu-header">
-        <a href="#" class="menu-header-logo">
+        <a href="/dashboard" class="menu-header-logo">
           <img src="../images/logo.svg" alt="logo" />
           <span>Cryptex</span>
         </a>
@@ -76,7 +73,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a
-              href="./login.html"
+              href="/login"
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -86,7 +83,7 @@
         <ul>
           <li class="menu-divider">Dashboard</li>
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <span class="nav-link-icon">
                 <i class="ri-dashboard-line"></i>
               </span>
@@ -94,7 +91,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/markets">
               <span class="nav-link-icon">
                 <i class="bi bi-bar-chart"></i>
               </span>
@@ -110,18 +107,18 @@
             </a>
             <ul>
               <li>
-                <a href="./deposit.html">Deposit</a>
+                <a href="/deposit">Deposit</a>
               </li>
               <li>
-                <a href="./transfer.html">Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a href="./withdraw.html">Withdraw</a>
+                <a href="/withdraw">Withdraw</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="./history.html">
+            <a class="active" href="/history">
               <span class="nav-link-icon">
                 <i class="ri-history-line"></i>
               </span>
@@ -129,7 +126,7 @@
             </a>
           </li>
           <li>
-            <a href="./packages.html">
+            <a href="/packages">
               <span class="nav-link-icon">
                 <i class="ri-box-3-line"></i>
               </span>
@@ -138,7 +135,7 @@
             </a>
           </li>
           <li>
-            <a href="./signal.html">
+            <a href="/signal">
               <span class="nav-link-icon">
                 <i class="ri-signal-tower-fill"></i>
               </span>
@@ -146,7 +143,7 @@
             </a>
           </li>
           <li>
-            <a class="active" href="./aml-kyc.html">
+            <a href="/aml-kyc">
               <span class="nav-link-icon">
                 <i class="ri-pass-valid-line"></i>
               </span>
@@ -155,7 +152,7 @@
           </li>
           <li class="menu-divider">Pages</li>
           <li>
-            <a href="./settings.html">
+            <a href="/settings">
               <span class="nav-link-icon">
                 <i class="bi bi-gear"></i>
               </span>
@@ -182,7 +179,7 @@
           <img width="100" src="../images/logo.svg" alt="logo" />
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Packages</div>
+        <div class="page-title">History</div>
         <form class="search-form">
           <div class="input-group">
             <button
@@ -206,10 +203,18 @@
         </form>
         <div class="header-bar ms-auto">
           <ul class="navbar-nav justify-content-end">
-            <li class="nav-item me-3">
+            <li class="nav-item">
               <a href="#" class="nav-link" data-sidebar-target="#notifications">
                 <i class="bi bi-bell icon-lg"></i>
               </a>
+            </li>
+            <li class="nav-item ms-3">
+              <button
+                class="btn btn-primary btn-icon"
+                style="background-color: #3874ff; border: none"
+              >
+                Verified
+              </button>
             </li>
           </ul>
         </div>
@@ -227,48 +232,103 @@
       <!-- ./ header -->
 
       <!-- content -->
-      <div
-        class="align-items-center d-flex justify-content-center text-center"
-        style="margin: 70px 200px 110px 200px"
-      >
-        <div class="d-block">
-          <div class="display-6">Nice</div>
-          <p class="text-muted my-4">
-            To comply with regulations each participant is required to go
-            through identity verification (KYC/AML) to prevent fraud, money
-            laundering operations, transactions banned under the sanctions
-            regime or those which fund terrorism. Please, complete our fast and
-            secure verification process to participate in our programs.
-          </p>
-        </div>
-      </div>
-      <div
-        class="align-items-center d-flex justify-content-left text-left"
-        style="margin: 0 0 140px 200px"
-      >
-        <div class="d-block">
-          <div class="display-8">Complete Your KYC</div>
-          <span class="text-muted my-2">Won't take long just 7 minutes 👍</span>
-          <p class="text-muted my-4">
-            Looks like your have not verified your identity yet. Please verify
-            yourself to get full access to our platform.
-          </p>
-          <ul class="text-muted my-4">
-            <li>Fiat Currency Wallet (USD, EUR, GBP)</li>
-            <li>10+ Digital Crypto Wallet (ETH, BTC, LTC etc)</li>
-            <li>Receive payments from Digital Finance FX</li>
-          </ul>
-          <div class="d-flex gap-3 justify-content-left">
-            <a href="#" class="btn btn-primary" style="background-color: #3874ff; border: none;">Get Started</a>
+      <div class="content">
+        <div class="card">
+          <div class="card-body">
+            <div class="d-md-flex gap-4 align-items-center">
+              <div class="d-none d-md-flex">Your History</div>
+              <div class="d-md-flex gap-4 align-items-center">
+                <form class="mb-3 mb-md-0">
+                  <div class="row g-3">
+                    <div class="col-md-6">
+                      <div class="input-group">
+                        <input
+                          type="text"
+                          class="form-control"
+                          placeholder="Search"
+                        />
+                        <button class="btn btn-outline-light" type="button">
+                          <i class="bi bi-search"></i>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </form>
+              </div>
+              <div class="dropdown ms-auto">
+                <a
+                  href="#"
+                  onclick="javascript:window.print()"
+                  class="btn btn-primary btn-icon"
+                  style="background-color: #3874ff; border: none"
+                >
+                  <i class="bi bi-printer"></i>Print</a
+                >
+              </div>
+            </div>
           </div>
         </div>
-        <div class="row mb-5">
-          <div class="col-md-5 m-auto">
-            <figure>
-              <img class="w-100" src="../images/kyc.svg" alt="image"/>
-            </figure>
+
+        <% if (numberOfHistories === 0) { %>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col-lg-12 col-md-12">
+            <div class="card widget">
+              <div class="card-body">
+                <div class="d-md-flex gap-4 align-items-center">
+                  <div class="d-none d-md-flex">
+                    Unfortunately, you have no Transaction History yet - maybe
+                    start sending or recieveing assets
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
+        <% } else { %>
+        <div class="table-responsive">
+          <table id="users" class="table table-custom table-lg">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Type</th>
+                <th>Amount</th>
+                <th>Transaction ID</th>
+                <th>Date</th>
+                <th>Action</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for (const history of histories) { %>
+              <tr>
+                <td><%= history.number %></td>
+                <td>
+                  <span class="nav-link-icon">
+                    <i class="ri-btc-fill"></i>
+                  </span>
+                  <%= history.type %>
+                </td>
+                <td><%= history.amount %></td>
+                <td><%= history.transactionId %></td>
+                <td><%= history.date %></td>
+                <td><%= history.action %></td>
+                <td>
+                  <span class="badge bg-success"><%= history.status %></span>
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+
+        <nav class="mt-4" aria-label="Page navigation example">
+          <div class="pagination justify-content-center">
+            <span class="badge" style="background-color: #3874ff"
+              >Load more...</span
+            >
+          </div>
+        </nav>
+        <% } %>
       </div>
       <!-- ./ content -->
 
@@ -305,6 +365,6 @@
     <script src="../js/examples/dashboard.js"></script>
 
     <!-- Main Javascript file -->
-    <script src="../public/scripts/dashboard.js"></script>
+    <script src="../scripts/dashboard.js"></script>
   </body>
 </html>

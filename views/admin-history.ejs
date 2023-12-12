@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cryptex - Admin history</title>
+    <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
+    <link rel="stylesheet" href="../styles/style.css" />
+    <link rel="stylesheet" href="../styles/help.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.min.css"
+    />
+    <script
+      src="https://kit.fontawesome.com/9d3e87d2ef.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <main>
+      <article>
+        <!-- support -->
+        <div class="contact-form">
+          <h1 class="h1">Add the History</h1>
+          <div class="contain">
+            <div class="main">
+              <div class="content">
+                <form action="/admin-history" method="POST">
+                  <input type="tel" name="number" placeholder="What number" />
+                  <select name="type" id="">
+                    <option value="Bitcoin">
+                      <i class="ri-btc-fill"></i> Bitcoin
+                    </option>
+                    <option value="ETH"><i class="ri-eth-fill"></i> ETH</option>
+                    <option value="USDT">
+                      <i class="ri-usdt-fill"></i> USDT
+                    </option>
+                    <option value="USDC">
+                      <i class="ri-usdc-fill"></i> USDC
+                    </option>
+                  </select>
+                  <input
+                    type="text"
+                    name="amount"
+                    placeholder="Enter the amount"
+                  />
+                  <input
+                    type="tid"
+                    name="transactionId"
+                    placeholder="Enter the id"
+                  />
+                  <input type="date" name="date" placeholder="Enter the date" />
+                  <input
+                    type="text"
+                    name="action"
+                    placeholder="Enter the action eg: sent or recieved"
+                  />
+                  <input
+                    type="text"
+                    name="status"
+                    placeholder="Enter the status eg: successful or failed"
+                  />
+                  <button type="submit" class="btn">
+                    Save <i class="fa-solid fa-save"></i>
+                  </button>
+                </form>
+              </div>
+              <div class="form-img">
+                <img src="../images/thoughts.svg" alt="support" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </main>
+
+    <!-- footer -->
+    <footer class="footer">
+      <div class="footer-top">
+        <div class="container">
+          <div class="footer-brand">
+            <a href="#" class="logo">
+              <img
+                src="../images/logo.svg"
+                width="50"
+                height="50"
+                alt="Cryptex Logo"
+              />
+              Cryptex
+            </a>
+            <h2 class="footer-title">Let's talk! 🤙</h2>
+            <a href="mailto:hello.cryptex@gmail.com" class="footer-contact-link"
+              >hello.cryptex@gmail.com</a
+            >
+            <address class="footer-contact-link">
+              Cecilia Chapman 711-2880 Nulla St. Mankato Mississippi 96522
+            </address>
+          </div>
+          <ul class="footer-link">
+            <li>
+              <p class="footer-list-title">Products</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Spot</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Inverse Perpetual</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">USDT Perpetual</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Exchange</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Launchpad</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Binance Pay</a>
+            </li>
+          </ul>
+          <ul class="footer-link">
+            <li>
+              <p class="footer-list-title">Services</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Buy Crypto</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Markets</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Tranding Fee</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Affiliate Program</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Referral Program</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">API</a>
+            </li>
+          </ul>
+          <ul class="footer-link">
+            <li>
+              <p class="footer-list-title">Support</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Bybit Learn</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Help Center</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">User Feedback</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Submit a request</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">API Documentation</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Trading Rules</a>
+            </li>
+          </ul>
+          <ul class="footer-link">
+            <li>
+              <p class="footer-list-title">About Us</p>
+            </li>
+            <li>
+              <a href="#" class="footer-link">About Bybit</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Authenticity Check</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Careers</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Business Contacts</a>
+            </li>
+            <li>
+              <a href="#" class="footer-link">Blog</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="container">
+          <p class="copyright">
+            &copy; 2023 Cryptex All Rights Reserved by
+            <a href="#" class="copyright-link">FAVE</a>
+          </p>
+          <ul class="social-list">
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-linkedin"></ion-icon>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../scripts/script.js"></script>
+    <!-- ionicons script -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>

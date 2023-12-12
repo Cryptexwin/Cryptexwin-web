@@ -8,6 +8,8 @@ style="color: #3874ff;"
 style="background-color: #3874ff;"
 style="background-color: #3874ff; border: none;"
 
+ class="active"
+
  Direct Trading Signals from the Brokerage.
  24/7 access to trading.
  Exclusive Account manager features.

@@ -6,7 +6,7 @@
     <title>Cryptex - Support</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/help.css">
+    <link rel="stylesheet" href="../styles/help.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -35,14 +35,10 @@
         <nav class="navbar" data-navbar>
           <ul class="navbar-list">
             <li class="navbar-item">
-              <a href="/" class="navbar-link" data-nav-link>
-                Homepage
-              </a>
+              <a href="/" class="navbar-link" data-nav-link> Homepage </a>
             </li>
             <li class="navbar-item">
-              <a href="/about" class="navbar-link" data-nav-link>
-                About
-              </a>
+              <a href="/about" class="navbar-link" data-nav-link> About </a>
             </li>
             <li class="navbar-item">
               <a href="/education" class="navbar-link" data-nav-link>
@@ -50,7 +46,9 @@
               </a>
             </li>
             <li class="navbar-item">
-              <a href="/help" class="navbar-link active" data-nav-link> Help </a>
+              <a href="/help" class="navbar-link active" data-nav-link>
+                Help
+              </a>
             </li>
             <li class="navbar-item">
               <a href="/news" class="navbar-link" data-nav-link> News </a>
@@ -77,32 +75,45 @@
         </button>
 
         <a href="/login" class="btn btn-primary">Login</a>
-          <a href="/signup" class="btn btn-primary">Sign Up</a>
+        <a href="/signup" class="btn btn-primary">Sign Up</a>
       </div>
     </header>
 
     <main>
       <article>
         <!-- support -->
-            <div class="contact-form">
-              <h1 class="h1 ">Need to talk to someone?</h1>
-              <div class="contain">
-                <div class="main">
-                  <div class="content">
-                    <h2>Let's talk</h2>
-                    <form action="#">
-                      <input type="text" name="name" placeholder="Enter Your Name">
-                      <input type="email" name="email" placeholder="Enter Your Email">
-                      <textarea name="message" placeholder="Your Message"></textarea>
-                      <button type="submit" class="btn">Send <i class="fa-solid fa-paper-plane"></i></button>
-                    </form>
-                  </div>
-                  <div class="form-img">
-                    <img src="../images/thoughts.svg" alt="support">
-                  </div>
-                </div>
+        <div class="contact-form">
+          <h1 class="h1">Need to talk to someone?</h1>
+          <div class="contain">
+            <div class="main">
+              <div class="content">
+                <h2>Let's talk</h2>
+                <form action="/help" method="POST">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder="Enter Your Name"
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder="Enter Your Email"
+                  />
+                  <textarea
+                    name="message"
+                    placeholder="Your Message"
+                  ></textarea>
+                  <button type="submit" class="btn">
+                    Send <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </form>
+              </div>
+              <div class="form-img">
+                <img src="../images/thoughts.svg" alt="support" />
               </div>
             </div>
+          </div>
+        </div>
       </article>
     </main>
 

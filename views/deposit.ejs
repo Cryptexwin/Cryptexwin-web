@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Signal - Cryptex</title>
+    <title>Deposit - Cryptex</title>
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.svg" />
@@ -32,9 +32,10 @@
     <!-- Main style file -->
     <link
       rel="stylesheet"
-      href="../public/styles/dashboard.css"
+      href="../styles/dashboard.css"
       type="text/css"
     />
+    <link rel="stylesheet" href="../public/styles/copy.css" />
   </head>
   <body>
     <!-- preloader -->
@@ -47,7 +48,7 @@
     <!-- menu -->
     <div class="menu">
       <div class="menu-header">
-        <a href="#" class="menu-header-logo">
+        <a href="/dashboard" class="menu-header-logo">
           <img src="../images/logo.svg" alt="logo" />
           <span>Cryptex</span>
         </a>
@@ -76,7 +77,7 @@
           </a>
           <div class="dropdown-menu dropdown-menu-end">
             <a
-              href="./login.html"
+              href="/login"
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
@@ -86,7 +87,7 @@
         <ul>
           <li class="menu-divider">Dashboard</li>
           <li>
-            <a href="./dashboard.html">
+            <a href="/dashboard">
               <span class="nav-link-icon">
                 <i class="ri-dashboard-line"></i>
               </span>
@@ -94,7 +95,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="/markets">
               <span class="nav-link-icon">
                 <i class="bi bi-bar-chart"></i>
               </span>
@@ -110,18 +111,18 @@
             </a>
             <ul>
               <li>
-                <a href="./deposit.html">Deposit</a>
+                <a class="active" href="/deposit">Deposit</a>
               </li>
               <li>
-                <a href="./transfer.html">Transfer</a>
+                <a href="/transfer">Transfer</a>
               </li>
               <li>
-                <a href="./withdraw.html">Withdraw</a>
+                <a href="/withdraw">Withdraw</a>
               </li>
             </ul>
           </li>
           <li>
-            <a href="./history.html">
+            <a href="/history">
               <span class="nav-link-icon">
                 <i class="ri-history-line"></i>
               </span>
@@ -129,7 +130,7 @@
             </a>
           </li>
           <li>
-            <a href="./packages.html">
+            <a href="/packages">
               <span class="nav-link-icon">
                 <i class="ri-box-3-line"></i>
               </span>
@@ -138,7 +139,7 @@
             </a>
           </li>
           <li>
-            <a class="active" href="./signal.html">
+            <a href="/signal">
               <span class="nav-link-icon">
                 <i class="ri-signal-tower-fill"></i>
               </span>
@@ -146,7 +147,7 @@
             </a>
           </li>
           <li>
-            <a href="./aml-kyc.html">
+            <a href="/aml-kyc">
               <span class="nav-link-icon">
                 <i class="ri-pass-valid-line"></i>
               </span>
@@ -155,7 +156,7 @@
           </li>
           <li class="menu-divider">Pages</li>
           <li>
-            <a href="./settings.html">
+            <a href="/settings">
               <span class="nav-link-icon">
                 <i class="bi bi-gear"></i>
               </span>
@@ -182,7 +183,7 @@
           <img width="100" src="../images/logo.svg" alt="logo" />
         </a>
         <!-- ./ Logo -->
-        <div class="page-title">Signal</div>
+        <div class="page-title">Dashboard</div>
         <form class="search-form">
           <div class="input-group">
             <button
@@ -206,10 +207,18 @@
         </form>
         <div class="header-bar ms-auto">
           <ul class="navbar-nav justify-content-end">
-            <li class="nav-item me-3">
+            <li class="nav-item">
               <a href="#" class="nav-link" data-sidebar-target="#notifications">
                 <i class="bi bi-bell icon-lg"></i>
               </a>
+            </li>
+            <li class="nav-item ms-3">
+              <button
+                class="btn btn-primary btn-icon"
+                style="background-color: #3874ff; border: none"
+              >
+                Verified
+              </button>
             </li>
           </ul>
         </div>
@@ -228,154 +237,119 @@
 
       <!-- content -->
       <div class="content">
-        <div class="text-center my-5">
-          <div class="row mb-5">
-            <div class="col-md-6 m-auto">
-              <p class="lead mb-0">
-                Choose one of the plans that suits you. You will get a better
-                service with the upgraded signal plan.
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-4">
-          <div class="col-md-4">
-            <div class="card">
-              <div class="py-4">
-                <div
-                  class="d-flex align-items-center justify-content-center mb-4"
-                >
-                  <span class="display-6 me-3">Free</span>
-                  <span class="text-muted">1 month free</span>
-                </div>
-                <div class="mb-4">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Direct Trading Signals from the Brokerage.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      24/7 access to trading.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-x text-danger me-2"></i>
-                      <del class="text-danger"> Exclusive Account manager features. </del>
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-x text-danger me-2"></i>
-                      <del class="text-danger"> Daily Market Reviews and Financial research. </del>
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-x text-danger me-2"></i>
-                      <del class="text-danger"> Priority Futures Market trading. </del>
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Increased asset leverage: up-to 70x.
-                    </li>
-                  </ul>
-                </div>
-                <div class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="background-color: #3874ff; border:none;"
-                    >Start Trial</a
-                  >
+        <div class="row flex-column-reverse flex-md-row">
+          <div class="col-md-8">
+            <div class="card mb-4">
+              <div class="card-body">
+                <h6 class="card-title mb-4">Deposit</h6>
+                <div class="row">
+                  <div>
+                    <div class="mb-3">
+                      <label class="form-label">Select Assets</label>
+                      <div>
+                        <select name="Select Assets" class="form-control" required>
+                          <option value="">Choose Assets</option>
+                          <option value="btc">BTC</option>
+                          <option value="eth">ETH</option>
+                          <option value="usdt">USDT</option>
+                          <option value="usdc">USDC</option>
+                        </select>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label class="form-label">Amount</label>
+                      <input
+                        type="email"
+                        class="form-control"
+                        placeholder="enter amount"
+                        required
+                      />
+                    </div>
+                    <p class="text-muted">
+                      <i class="ri-information-fill text-success"></i>
+                      Deposits will appear in your account after payments are
+                      successfully made and confirmed by our team
+                    </p>
+                  </div>
+                  <div>
+                    <button
+                      type="button"
+                      class="btn btn-primary"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                      style="background-color: #3874ff; border: none"
+                    >
+                      Make Payment
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-selected">
-              <div class="py-4">
-                <div
-                  class="d-flex align-items-center justify-content-center mb-4"
-                >
-                  <span class="display-6 me-3" data-price1-text="">$1,500</span>
-                  <span class="text-muted" data-price1-label="">2 Months</span>
-                </div>
-                <div class="mb-4">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Direct Trading Signals from the Brokerage.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      24/7 access to trading.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Exclusive Account manager features.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Daily Market Reviews and Financial research.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-x text-danger me-2"></i>
-                      <del class="text-danger"> Priority Futures Market trading. </del>
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Increased asset leverage: up-to 70x.
-                    </li>
-                  </ul>
-                </div>
-                <div class="text-center">
-                  <a href="#" class="btn btn-primary">Get Started</a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card">
-              <div class="py-4">
-                <div
-                  class="d-flex align-items-center justify-content-center mb-4"
-                >
-                  <del class="text-danger me-3">$3,500</del>
-                  <span class="display-6 me-3" data-price2-text="">$2,500</span>
-                  <span class="text-muted" data-price2-label="">Monthly</span>
-                </div>
-                <div class="mb-4">
-                  <ul class="list-group list-group-flush">
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Direct Trading Signals from the Brokerage.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      24/7 access to trading.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Exclusive Account manager features.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Daily Market Reviews and Financial research.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Priority Futures Market trading.
-                    </li>
-                    <li class="list-group-item">
-                      <i class="bi bi-check2 me-2"></i>
-                      Increased asset leverage: up-to 70x.
-                    </li>
-                  </ul>
-                </div>
-                <div class="text-center">
-                  <a
-                    href="#"
-                    class="btn btn-primary"
-                    style="background-color: #3874ff; border:none;"
-                    >Get Plan</a
-                  >
+            <div
+              class="modal"
+              id="exampleModal"
+              tabindex="1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h4 class="card-title">Payment Confirmation</h4>
+                  </div>
+                  <div class="modal-body">
+                    <p>
+                      Your Order no. CXCA893GrSw5K has been placed successfully.
+                    </p>
+                    <p>
+                      Please send 1000 USDT ($1000) to the address below. The
+                      balance will appear in your account only after transaction
+                      gets confirmed by our team.
+                    </p>
+                    <h4 class="display-9">
+                      Payment to the following USDT Wallet Address
+                    </h4>
+                    <div
+                      class="align-items-center d-flex justify-content-left text-left"
+                    >
+                      <img src="../images/scan.jpg" width="200px" alt="scan" />
+                      <div>
+                        <label class="form-label">Amount</label>
+                        <input
+                          type="email"
+                          class="form-control"
+                          placeholder="enter amount"
+                          style="width: 500px;"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="modal-footer justify-content-between">
+                    <div>
+                      <button type="button" class="btn btn-primary">
+                        Confirm
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-danger ms-3"
+                        data-bs-dismiss="modal"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                    <div style="display: block">
+                      <p class="text-muted">
+                        <i class="ri-information-fill text-success"></i>
+                        Kindly ensure you select the appropriate networks for
+                        deposit.
+                      </p>
+                      <p class="text-danger">
+                        <i class="ri-information-fill"></i>
+                        Kindly ensure you send exact amount as added in your
+                        deposit
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -417,6 +391,7 @@
     <script src="../js/examples/dashboard.js"></script>
 
     <!-- Main Javascript file -->
-    <script src="../public/scripts/dashboard.js"></script>
+    <script src="../scripts/dashboard.js"></script>
+    <script src="../scripts/copy.js"></script>
   </body>
 </html>
