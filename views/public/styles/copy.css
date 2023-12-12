@@ -1,0 +1,60 @@
+.copy-text{
+    position: relative;
+    padding: 10px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+}
+
+.copy-text input.text{
+    padding: 10px;
+    font-size: 18px;
+    color: #555;
+    border: none;
+    outline: none;
+}
+
+.copy-text button{
+    padding: 10px;
+    background: #3874ff;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.copy-text button:active{
+    background: #96b5ff;
+}
+
+.copy-text button::before{
+    content: "copied";
+    position: absolute;
+    top: -52px;
+    right: 0px;
+    background: #3874ff;
+    padding: 8px 10px;
+    border-radius: 20px;
+    font-size: 15px;
+    display: none;
+}
+
+.copy-text button::after{
+    content: "";
+    position: absolute;
+    top: -20px;
+    right: 25px;
+    width: 10px;
+    height: 10px;
+    background: #3874ff;
+    transform: rotate(45deg);
+    display: none;
+}
+
+.copy-text.active button::before,
+.copy-text.active button::after{
+    display: block;
+}
