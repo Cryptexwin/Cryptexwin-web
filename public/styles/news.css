@@ -196,10 +196,6 @@
   color: var(--foreground-secondary);
 }
 
-.blog .h4:hover {
-  color: var(--accent);
-}
-
 .blog .text-sm {
   display: flex;
   align-items: center;

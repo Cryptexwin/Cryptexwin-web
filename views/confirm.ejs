@@ -3,86 +3,116 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cryptex - Admin history</title>
+    <title>Cryptex - confirmed</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
     <link rel="stylesheet" href="../styles/style.css" />
-    <link rel="stylesheet" href="../styles/help.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.7.0/remixicon.min.css"
-    />
-    <script
-      src="https://kit.fontawesome.com/9d3e87d2ef.js"
-      crossorigin="anonymous"
-    ></script>
   </head>
   <body>
+    <!-- header -->
+    <header class="header" data-header>
+      <div class="container">
+        <a href="/" class="logo">
+          <img
+            src="../images/logo.svg"
+            width="32"
+            height="32"
+            alt="Cryptex Logo"
+          />
+          Cryptex
+        </a>
+        <!-- navbar -->
+        <nav class="navbar" data-navbar>
+          <ul class="navbar-list">
+            <li class="navbar-item">
+              <a href="/" class="navbar-link" data-nav-link> Homepage </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/about" class="navbar-link" data-nav-link> About </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/education" class="navbar-link" data-nav-link>
+                Education
+              </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/help" class="navbar-link" data-nav-link> Help </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/news" class="navbar-link" data-nav-link> News </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/FAQ" class="navbar-link" data-nav-link> FAQ </a>
+            </li>
+            <li class="navbar-item">
+              <a href="/contact-us" class="navbar-link" data-nav-link>
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <button
+          class="nav-toggle-btn"
+          aria-label="Toggle menu"
+          data-nav-toggler
+        >
+          <span class="line line-1"></span>
+          <span class="line line-2"></span>
+          <span class="line line-3"></span>
+        </button>
+
+        <a href="/login" class="btn btn-primary">Login</a>
+        <a href="/signup" class="btn btn-primary">Sign Up</a>
+      </div>
+    </header>
+
     <main>
       <article>
-        <!-- support -->
-        <div class="contact-form">
-          <h1 class="h1">Add the History</h1>
-          <div class="contain">
-            <div class="main">
-              <div class="content">
-                <form action="/admin-history" method="POST">
-                  <input type="tel" name="number" placeholder="What number" />
-                  <select name="type" id="">
-                    <option value="Bitcoin">
-                      <i class="ri-btc-fill"></i> Bitcoin
-                    </option>
-                    <option value="ETH"><i class="ri-eth-fill"></i> ETH</option>
-                    <option value="USDT">
-                      <i class="ri-usdt-fill"></i> USDT
-                    </option>
-                    <option value="USDC">
-                      <i class="ri-usdc-fill"></i> USDC
-                    </option>
-                  </select>
-                  <input
-                    type="text"
-                    name="amount"
-                    placeholder="Enter the amount"
-                  />
-                  <input
-                    type="tid"
-                    name="transactionId"
-                    placeholder="Enter the id"
-                  />
-                  <input type="date" name="date" placeholder="Enter the date" />
-                  <input
-                    type="text"
-                    name="action"
-                    placeholder="Enter the action eg: sent or recieved"
-                  />
-                  <input
-                    type="text"
-                    name="status"
-                    placeholder="Enter the status eg: successful or failed"
-                  />
-                  <button type="submit" class="btn">
-                    Save <i class="fa-solid fa-save"></i>
-                  </button>
-                </form>
-              </div>
-              <div class="form-img">
-                <img src="../images/thoughts.svg" alt="support" />
-              </div>
+        <!-- instruction -->
+        <section
+          class="section instruction"
+          aria-label="instruction"
+          data-sectio
+          style="height: 95vh"
+        >
+          <div
+            class="container"
+            style="
+              display: flex;
+              flex-direction: column;
+              position: relative;
+              top: 25%;
+            "
+          >
+            <h2 class="h2 section-title">Sent</h2>
+            <p class="section-text">
+              We got your message we'll respond to you soon, via your given email address
+            </p>
+            <div
+              class="section-text"
+              style="justify-content: center; display: flex"
+            >
+              <a
+                class="btn btn-primary prev-page"
+                style="background-color: #3874ff; border: none"
+              >
+                Go Back
+              </a>
             </div>
           </div>
-        </div>
+        </section>
       </article>
     </main>
 
     <!-- footer -->
     <footer class="footer">
-      <div class="footer-top">
+      <div class="footer-top" data-sectio>
         <div class="container">
           <div class="footer-brand">
             <a href="#" class="logo">
@@ -95,6 +125,7 @@
               Cryptex
             </a>
             <h2 class="footer-title">Let's talk! 🤙</h2>
+            <a href="" class="footer-contact-link">+12 345 678 9101</a>
             <a href="mailto:hello.cryptex@gmail.com" class="footer-contact-link"
               >hello.cryptex@gmail.com</a
             >
@@ -225,7 +256,7 @@
       </div>
     </footer>
 
-    <script src="../scripts/script.js"></script>
+    <script src="../scripts/go-back.js"></script>
     <!-- ionicons script -->
     <script
       type="module"

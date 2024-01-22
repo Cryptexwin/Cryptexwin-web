@@ -30,12 +30,8 @@
     <link rel="stylesheet" href="../libs/slick/slick.css" type="text/css" />
 
     <!-- Main style file -->
-    <link
-      rel="stylesheet"
-      href="../styles/dashboard.css"
-      type="text/css"
-    />
-    <link rel="stylesheet" href="../public/styles/copy.css" />
+    <link rel="stylesheet" href="../styles/dashboard.css" type="text/css" />
+    <link rel="stylesheet" href="../styles/dash-copy.css" />
   </head>
   <body>
     <!-- preloader -->
@@ -243,113 +239,134 @@
               <div class="card-body">
                 <h6 class="card-title mb-4">Deposit</h6>
                 <div class="row">
-                  <div>
-                    <div class="mb-3">
-                      <label class="form-label">Select Assets</label>
-                      <div>
-                        <select name="Select Assets" class="form-control" required>
-                          <option value="">Choose Assets</option>
-                          <option value="btc">BTC</option>
-                          <option value="eth">ETH</option>
-                          <option value="usdt">USDT</option>
-                          <option value="usdc">USDC</option>
-                        </select>
+                  <form action="/deposit" method="POST">
+                    <div>
+                      <div class="mb-3">
+                        <label class="form-label">Select Assets</label>
+                        <div>
+                          <select
+                            name="assets"
+                            class="form-control"
+                            id="crypt-val"
+                            onselect="getValue()"
+                            required
+                          >
+                            <option value="">Choose Assets</option>
+                            <% for (const asset of assets) { %>
+                            <option value="<%= asset._id %>">
+                              <%= asset.name %>
+                            </option>
+                            <% } %>
+                          </select>
+                        </div>
                       </div>
-                    </div>
-                    <div class="mb-3">
-                      <label class="form-label">Amount</label>
-                      <input
-                        type="email"
-                        class="form-control"
-                        placeholder="enter amount"
-                        required
-                      />
-                    </div>
-                    <p class="text-muted">
-                      <i class="ri-information-fill text-success"></i>
-                      Deposits will appear in your account after payments are
-                      successfully made and confirmed by our team
-                    </p>
-                  </div>
-                  <div>
-                    <button
-                      type="button"
-                      class="btn btn-primary"
-                      data-bs-toggle="modal"
-                      data-bs-target="#exampleModal"
-                      style="background-color: #3874ff; border: none"
-                    >
-                      Make Payment
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div
-              class="modal"
-              id="exampleModal"
-              tabindex="1"
-              aria-labelledby="exampleModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="card-title">Payment Confirmation</h4>
-                  </div>
-                  <div class="modal-body">
-                    <p>
-                      Your Order no. CXCA893GrSw5K has been placed successfully.
-                    </p>
-                    <p>
-                      Please send 1000 USDT ($1000) to the address below. The
-                      balance will appear in your account only after transaction
-                      gets confirmed by our team.
-                    </p>
-                    <h4 class="display-9">
-                      Payment to the following USDT Wallet Address
-                    </h4>
-                    <div
-                      class="align-items-center d-flex justify-content-left text-left"
-                    >
-                      <img src="../images/scan.jpg" width="200px" alt="scan" />
-                      <div>
+                      <div class="mb-3">
                         <label class="form-label">Amount</label>
                         <input
-                          type="email"
+                          name="amount"
+                          type="text"
                           class="form-control"
+                          id="val"
                           placeholder="enter amount"
-                          style="width: 500px;"
+                          oninput="getValue()"
+                          required
                         />
+                        <input type="hidden" name="action" value="Recieved" />
+                        <input type="hidden" name="status" value="Pending" />
+                        <input type="hidden" name="statusT" value="warning" />
                       </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer justify-content-between">
-                    <div>
-                      <button type="button" class="btn btn-primary">
-                        Confirm
-                      </button>
-                      <button
-                        type="button"
-                        class="btn btn-danger ms-3"
-                        data-bs-dismiss="modal"
-                      >
-                        Cancel
-                      </button>
-                    </div>
-                    <div style="display: block">
                       <p class="text-muted">
                         <i class="ri-information-fill text-success"></i>
-                        Kindly ensure you select the appropriate networks for
-                        deposit.
-                      </p>
-                      <p class="text-danger">
-                        <i class="ri-information-fill"></i>
-                        Kindly ensure you send exact amount as added in your
-                        deposit
+                        Deposits will appear in your account after payments are
+                        successfully made and confirmed by our team
                       </p>
                     </div>
-                  </div>
+                    <div>
+                      <button
+                        type="button"
+                        class="btn btn-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target="#exampleModal"
+                        style="background-color: #3874ff; border: none"
+                      >
+                        Make Payment
+                      </button>
+                    </div>
+                    <div
+                      class="modal"
+                      id="exampleModal"
+                      tabindex="1"
+                      aria-labelledby="exampleModalLabel"
+                      aria-hidden="true"
+                    >
+                      <div class="modal-dialog modal-lg">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h4 class="card-title">Payment Confirmation</h4>
+                          </div>
+                          <div class="modal-body">
+                            <p>
+                              Your Order no. CXCA893GrSw5K has been placed
+                              successfully.
+                            </p>
+                            <p>
+                              Please send <span id="val-result"></span> to the
+                              address below. The balance will appear in your
+                              account only after transaction gets confirmed by
+                              our team.
+                            </p>
+                            <h4 class="display-9">
+                              Payment to the following Wallet Address
+                            </h4>
+                            <div
+                              class="align-items-center d-flex justify-content-left text-left"
+                            >
+                              <img
+                                src="../images/scan.jpg"
+                                width="200px"
+                                alt="scan"
+                              />
+                              <div>
+                                <label class="form-label"
+                                  >Copy wallet address 👇</label
+                                >
+                                <p>ugeszgiwe9beyb9ytqe89y4wtn0ern0</p>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="modal-footer justify-content-between">
+                            <div>
+                              <button
+                                type="submit"
+                                class="btn btn-primary delay"
+                              >
+                                Confirm
+                              </button>
+                              <button
+                                type="button"
+                                class="btn btn-danger ms-3"
+                                data-bs-dismiss="modal"
+                              >
+                                Cancel
+                              </button>
+                            </div>
+                            <div style="display: block">
+                              <p class="text-muted">
+                                <i class="ri-information-fill text-success"></i>
+                                Kindly ensure you select the appropriate
+                                networks for deposit.
+                              </p>
+                              <p class="text-danger">
+                                <i class="ri-information-fill"></i>
+                                Kindly ensure you send exact amount as added in
+                                your deposit
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </form>
                 </div>
               </div>
             </div>
@@ -392,6 +409,17 @@
 
     <!-- Main Javascript file -->
     <script src="../scripts/dashboard.js"></script>
-    <script src="../scripts/copy.js"></script>
+    <script>
+      function getValue() {
+        let txt = document.getElementById("val");
+        let txtVal = txt.value;
+
+        let val = document.getElementById("crypt-val");
+        let valVal = val.value;
+
+        let result = document.getElementById("val-result");
+        result.innerText = txtVal + ` ` + valVal;
+      }
+    </script>
   </body>
 </html>

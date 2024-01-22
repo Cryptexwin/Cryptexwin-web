@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
+    <title>Sign In</title>
     <link rel="shortcut icon" href="./favicon.svg" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,125 +11,143 @@
       href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../styles/login.css" />
-    <script
-      src="https://kit.fontawesome.com/9d3e87d2ef.js"
-      crossorigin="anonymous"
-    ></script>
+    <link rel="stylesheet" href="../styles/dashboard.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/3.6.0/remixicon.css"
+    />
   </head>
+  <body class="auth">
+    <!-- begin::preloader-->
+    <div class="preloader">
+      <div class="preloader-icon"></div>
+    </div>
+    <!-- end::preloader -->
 
-  <body>
-    <div class="container">
-      <div class="forms-container">
-        <div class="signin-signup">
-          <form action="" class="sign-in-form">
-            <a href="/index" class="logo">
-              <img
-                src="../images/logo.svg"
-                width="42"
-                height="42"
-                alt="Cryptex Logo"
-              />
-              Cryptex
-            </a>
-            <h2 class="title">Sign In</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username or email" />
+    <div class="form-wrapper">
+      <div class="container">
+        <div class="card">
+          <div class="row g-0">
+            <div class="col">
+              <div class="row">
+                <div class="col-md-10 offset-md-1">
+                  <div class="d-block d-lg-none text-center text-lg-start">
+                    <a href="/index" class="logo">
+                      <img
+                        src="../images/logo.svg"
+                        width="52"
+                        height="52"
+                        alt="Cryptex Logo"
+                      />
+                    </a>
+                  </div>
+                  <div class="my-5 text-center text-lg-start">
+                    <h1 class="display-8">Sign In</h1>
+                    <p class="text-muted">Sign in to Cryptex to continue</p>
+                  </div>
+                  <form action="./login" method="POST" class="mb-5">
+                    <% if (inputData.hasError) { %>
+                      <p class="text-danger"><%= inputData.message %></p>
+                      <% } %>
+                    <div class="mb-3">
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email"
+                        placeholder="Email"
+                        name="email"
+                        value="<%= inputData.email %>"
+                        autofocus
+                        required
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <input
+                        type="password"
+                        class="form-control"
+                        id="password"
+                        placeholder="Password"
+                        name="password"
+                        value="<%= inputData.password %>"
+                        required
+                      />
+                    </div>
+                    <div class="text-center text-lg-start">
+                      <p class="small">
+                        Can't access your account?
+                        <a href="#">Reset your password now</a>.
+                      </p>
+                      <button
+                        class="btn btn-primary"
+                        style="background-color: #3874ff; border: none"
+                      >
+                        Sign In
+                      </button>
+                    </div>
+                  </form>
+                  <div class="social-links justify-content-center">
+                    <a href="#">
+                      <i
+                        class="ri-github-fill"
+                        style="background-color: black"
+                      ></i>
+                      Our Github Account
+                    </a>
+                    <a href="#">
+                      <i class="ri-facebook-circle-fill bg-facebook"></i> Our Facebook
+                      Account
+                    </a>
+                  </div>
+                  <p class="text-center d-block d-lg-none mt-5 mt-lg-0">
+                    Don't have an account? <a href="#">Sign up</a>.
+                  </p>
+                </div>
+              </div>
             </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
+            <div
+              class="col d-none d-lg-flex border-start align-items-center justify-content-between flex-column text-center"
+            >
+              <div class="logo mt-5">
+                <a href="/index" class="logo">
+                  <img
+                    src="../images/logo.svg"
+                    width="52"
+                    height="52"
+                    alt="Cryptex Logo"
+                  />
+                </a>
+              </div>
+              <div>
+                <h3 class="fw-bold">Welcome to Cryptex!</h3>
+                <p class="lead my-5">
+                  If you don't have an account, would you like to register right
+                  now?
+                </p>
+                <a
+                  href="/signup"
+                  class="btn btn-primary"
+                  style="background-color: #3874ff; border: none"
+                  >Sign Up</a
+                >
+              </div>
+              <ul class="list-inline">
+                <li class="list-inline-item">
+                  <a href="#">Privacy Policy</a>
+                </li>
+                <li class="list-inline-item">
+                  <a href="#">Terms & Conditions</a>
+                </li>
+              </ul>
             </div>
-            <input type="submit" value="Sign In" class="btn solid" />
-
-            <p class="social-text">Our Social Platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </form>
-          <form action="" class="sign-up-form">
-            <a href="/index" class="logo">
-              <img
-                src="../images/logo.svg"
-                width="42"
-                height="42"
-                alt="Cryptex Logo"
-              />
-              Cryptex
-            </a>
-            <h2 class="title">Sign Up</h2>
-            <div class="input-field">
-              <i class="fas fa-user"></i>
-              <input type="text" placeholder="Username" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-envelope"></i>
-              <input type="text" placeholder="Email" />
-            </div>
-            <div class="input-field">
-              <i class="fas fa-lock"></i>
-              <input type="password" placeholder="Password" />
-            </div>
-            <input type="submit" value="Sign Up" class="btn solid" />
-
-            <p class="social-text">Our Social Platforms</p>
-            <div class="social-media">
-              <a href="#" class="social-icon">
-                <i class="fab fa-facebook-f"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-twitter"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-github"></i>
-              </a>
-              <a href="#" class="social-icon">
-                <i class="fab fa-instagram"></i>
-              </a>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <div class="panels-container">
-        <div class="panel left-panel">
-          <div class="content">
-            <h3>New Here?</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-              quisquam nulla debitis!
-            </p>
-            <button class="btn transparent" id="sign-up-btn">Sign Up</button>
           </div>
-          <img src="../images/log.svg" alt="login-image" class="image" />
-        </div>
-
-        <div class="panel right-panel">
-          <div class="content">
-            <h3>One of Us?</h3>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. In
-              quisquam nulla debitis!
-            </p>
-            <button class="btn transparent" id="sign-in-btn">Sign In</button>
-          </div>
-          <img src="../images/reg.svg" alt="signup-image" class="image" />
         </div>
       </div>
     </div>
 
-    <script src="../scripts/login.js"></script>
+    <!-- JQuery -->
+    <script src="../libs/jquery-3.7.1.min.js"></script>
+
+    <!-- Main Javascript file -->
+    <script src="../scripts/dashboard.js"></script>
   </body>
 </html>

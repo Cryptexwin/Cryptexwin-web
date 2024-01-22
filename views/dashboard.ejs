@@ -6,9 +6,6 @@
     <%- include('includes/dash-head') %>
   </head>
   <body>
-    <!-- preloader -->
-    <%- include('includes/preloader') %>
-    <!-- ./ preloader -->
 
     <!-- menu -->
     <div class="menu">
@@ -41,12 +38,13 @@
             </div>
           </a>
           <div class="dropdown-menu dropdown-menu-end">
-            <a
-              href="/login"
+            <form action="/logout" method="POST">
+              <button
               class="dropdown-item d-flex align-items-center text-danger"
             >
               <i class="bi bi-box-arrow-right dropdown-item-icon"></i> Logout
-            </a>
+            </button>
+          </form>
           </div>
         </div>
         <ul>
@@ -297,7 +295,8 @@
                     ></script>
                     <script type="text/javascript">
                       new TradingView.widget({
-                        autosize: true,
+                        "width": "905",
+                        "height": "300",
                         symbol: "CRYPTOCAP:BTC",
                         interval: "D",
                         timezone: "Etc/UTC",
